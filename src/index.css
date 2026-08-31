@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-color: #F8F8F8;
+    --text-color: #1A1A1A;
+    --panel-bg: #FFFFFF;
+    --accent-bg: #EAEAEA;
+    --border-color: #000000;
+  }
+
+  :root.dark {
+    --bg-color: #121212;
+    --text-color: #F5F5F5;
+    --panel-bg: #1A1A1A;
+    --accent-bg: #262626;
+    --border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display, .font-headline {
+    font-family: 'Hanken Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Geometric Balance Architectural Cards & Panels */
+.glass-card, .geometric-card {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card, .dark .geometric-card {
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel, .geometric-panel {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+}
+
+.geometric-border {
+  border: 1px solid var(--border-color);
+}
+
+.progress-track {
+  background-color: var(--accent-bg);
+  border: 1px solid var(--border-color);
+}
+
+.progress-fill {
+  background-color: #000000;
+}
+
+.dark .progress-fill {
+  background-color: #FFFFFF;
+}
+
+.bg-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .bg-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Neural / Geometric Grid for Games */
+.bg-neural-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+}
+
+.dark .bg-neural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+.radial-vignette {
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.03) 100%);
+}
+
+.dark .radial-vignette {
+  background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Active Tile Glow Animation */
+@keyframes geometricPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-glow {
+  animation: geometricPulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+.chart-glow {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Spline Chart Glow */
+.chart-glow {
+  filter: drop-shadow(0 0 8px rgba(0, 90, 194, 0.35));
+}
+
+/* Hide scrollbar for clean horizontal swipes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe padding for bottom navigation */
+.pb-safe {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}

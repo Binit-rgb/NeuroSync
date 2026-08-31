@@ -1,0 +1,8 @@
+{
+  "name": "Remix NeuroSync",
+  "description": "AI-powered cognitive training and memory management app featuring 6 neuroplasticity training modules (Memory Matrix, Memory Match, Focus Flow, Pattern Recall, Logic Circuit, Word Weaver), AI memory assistant, and personalized brain performance insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
